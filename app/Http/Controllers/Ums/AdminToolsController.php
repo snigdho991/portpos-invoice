@@ -162,7 +162,7 @@ class AdminToolsController extends Controller
         $find_order->status = 'Refund';
         $find_order->save();
 
-        $refund_array = ['refund' => ['amount' => (float) $request->refund_amount]];
+        $refund_array = ['refund' => ['amount' => (float) $find_order->amount]];
     
         $refund_object = json_encode ($refund_array);
 
